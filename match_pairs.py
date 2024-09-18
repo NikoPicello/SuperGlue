@@ -288,8 +288,12 @@ if __name__ == '__main__':
         mkpts1 = kpts1[matches[valid]]
         mconf = conf[valid]
 
+        do_eval = True
         if do_eval:
             # Estimate the pose and compute the pose error.
+            print('eval')
+            print(pair[4:13])
+            break
             assert len(pair) == 38, 'Pair does not have ground truth info'
             K0 = np.array(pair[4:13]).astype(float).reshape(3, 3)
             K1 = np.array(pair[13:22]).astype(float).reshape(3, 3)
